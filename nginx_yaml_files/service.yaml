@@ -1,0 +1,11 @@
+kind: Service
+metadata:
+  name: web-service
+spec:
+  selector:
+    app: hello-world
+  ports:
+    - protocol: TCP
+      port: 80        # The port the service listens on
+      targetPort: 80  # The port the container is listening on
+  type: ClusterIP     # Internal only (we use k3d's ingress/port mapping to see it)
