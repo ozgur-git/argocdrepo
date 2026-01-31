@@ -1,3 +1,4 @@
+apiVersion: v1
 kind: Service
 metadata:
   name: web-service
@@ -8,4 +9,4 @@ spec:
     - protocol: TCP
       port: 80        # The port the service listens on
       targetPort: 80  # The port the container is listening on
-  type: ClusterIP     # Internal only (we use k3d's ingress/port mapping to see it)
+  type: NodePort     # Internal only (we use k3d's ingress/port mapping to see it)
