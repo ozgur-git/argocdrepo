@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-sample-app
-  labels:
-    app: sample-app
+  name: web-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sample-app
+      app: hello-world
   template:
     metadata:
       labels:
-        app: sample-app
+        app: hello-world
     spec:
       containers:
       - name: nginx
-        image: nginx:1.25-alpine
+        image: nginx:latest
         ports:
         - containerPort: 80
